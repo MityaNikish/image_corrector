@@ -7,6 +7,7 @@ enum class Rotation {
 	pi = 180,
 	three_halves_of_pi = 270
 };
+
 enum class Reflection {
 	horizontal,
 	vertical
@@ -14,4 +15,5 @@ enum class Reflection {
 
 bmp::Bitmap imageRotation(bmp::Bitmap const& image, Rotation rotation_degree);
 bmp::Bitmap imageReflection(bmp::Bitmap const& image, Reflection axis);
-void saveImage(bmp::Bitmap const& image, Rotation angle);
+void saveImageRotation(bmp::Bitmap& image, std::string file_name, Rotation angle);
+void saveImageReflection(bmp::Bitmap& image, std::string file_name, Reflection axis);

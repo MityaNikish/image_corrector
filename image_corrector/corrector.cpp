@@ -117,24 +117,21 @@ void saveImageRotation(bmp::Bitmap& image, std::string file_name, Rotation angle
 	image.save(file_name + postfix);
 }
 
-void saveImageRotation(bmp::Bitmap& image, std::string file_name, Reflection axis) {
+void saveImageReflection(bmp::Bitmap& image, std::string file_name, Reflection axis) {
 	std::string postfix;
 
-	//switch (angle)
-	//{
-	//case Rotation::half_pi:
-	//	postfix = "_90.bmp";
-	//	break;
-	//case Rotation::pi:
-	//	postfix = "_180.bmp";
-	//	break;
-	//case Rotation::three_halves_of_pi:
-	//	postfix = "_270.bmp";
-	//	break;
-	//default:
-	//	postfix = ".bmp";
-	//	break;
-	//}
+	switch (axis)
+	{
+	case Reflection::horizontal:
+		postfix = "_h.bmp";
+		break;
+	case Reflection::vertical:
+		postfix = "_v.bmp";
+		break;
+	default:
+		throw bmp::Exception("Incorrect enum const in \"imageReflection()\".");
+		break;
+	}
 
 	image.save(file_name + postfix);
 }
