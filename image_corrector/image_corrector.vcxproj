@@ -128,12 +128,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="corrector.cpp" />
+    <ClCompile Include="rotation_reflection.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="rename.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitmapPlusPlus.hpp" />
-    <ClInclude Include="corrector.hpp" />
+    <ClInclude Include="rotation_reflection.hpp" />
+    <ClInclude Include="rename.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="image.bmp" />
