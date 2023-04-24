@@ -185,6 +185,19 @@ TEST(case_reflection_vertical, test_1) {
 //-----------------------------------------------------------------------------------------------------------------------------------------------//
 //-----------------------------------------------------------------------------------------------------------------------------------------------//
 
+TEST(case_rotation_reflection, to_the_same_plase) {
+	const bmp::Bitmap image_before = generate_image(10, 20);
+	bmp::Bitmap image_after = imageReflection(image_before, Reflection::horizontal);
+	image_after = imageRotation(image_after, Rotation::half_pi);
+	image_after = imageReflection(image_after, Reflection::vertical);
+	image_after = imageRotation(image_after, Rotation::three_halves_of_pi);
+
+	EXPECT_TRUE(image_before == image_after);
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------------------------//
+
 TEST(pi_double_two, one_X_one) {
 	bmp::Bitmap image(1, 1);
 	image.set(0, 0, bmp::White);
